@@ -1,7 +1,6 @@
 # cadunico-web
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Project of TCC.
 
 ## Prerequisites
 
@@ -24,4 +23,3 @@ You will need the following things properly installed on your computer.
 
 * `ember server`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-
