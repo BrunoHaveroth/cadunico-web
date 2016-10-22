@@ -1,0 +1,18 @@
+{{ember-notify messageStyle='bootstrap' closeAfter=5000}}
+{{#if session.isAuthenticated}}
+  <div id="wrapper">
+    <!--navbar-->
+    {{application-navbar}}
+    <!--navbar-->
+
+    <!--main content start-->
+
+    <div id="page-wrapper">
+      {{outlet}}
+    </div>
+
+    <!--main content end-->
+  </div>
+{{else}}
+  {{outlet}}
+{{/if}}

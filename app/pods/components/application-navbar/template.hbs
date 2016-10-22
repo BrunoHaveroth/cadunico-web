@@ -1,0 +1,88 @@
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+      <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="index.html">LD Manager</a>
+      </div>
+      <!-- /.navbar-header -->
+
+      <ul class="nav navbar-top-links navbar-right">
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                  <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-user">
+                  <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
+                  </li>
+                  {{#if isAgencyAdmin}}
+                    <li>{{#link-to 'agency'}}<i class="fa fa-university" aria-hidden="true"></i> Agencia{{/link-to}}</li>
+                  {{/if}}
+                  {{#if isAdmin}}
+                    <li>{{#link-to 'account'}}<i class="fa fa-cogs" aria-hidden="true"></i> Conta{{/link-to}}</li>
+                  {{/if}}
+                  <li><a href="#"><i class="fa fa-wrench" aria-hidden="true"></i> Settings</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li><a href="#" {{action 'sendLogout'}}><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                  </li>
+              </ul>
+              <!-- /.dropdown-user -->
+          </li>
+          <!-- /.dropdown -->
+      </ul>
+      <!-- /.navbar-top-links -->
+
+      <div class="navbar-default sidebar" role="navigation">
+          <div class="sidebar-nav navbar-collapse">
+              <ul class="nav" id="side-menu">
+                  <li class="sidebar-search">
+                      <div class="input-group custom-search-form">
+                          <input type="text" class="form-control" placeholder="Search...">
+                          <span class="input-group-btn">
+                          <button class="btn btn-default" type="button">
+                              <i class="fa fa-search"></i>
+                          </button>
+                      </span>
+                      </div>
+                      <!-- /input-group -->
+                  </li>
+                  <li>
+                      {{#link-to 'campaign'}}
+                        <i class="fa fa-laptop" aria-hidden="true"></i>
+                        <span>Campanhas</span>
+                      {{/link-to}}
+                  </li>
+                  <li>
+                      {{#link-to 'lead'}}
+                        <i class="fa fa-users" aria-hidden="true"></i>
+                        <span>Leads</span>
+                      {{/link-to}}
+                  </li>
+                  {{#if isAgencyAdmin}}
+                    <li>
+                        {{#link-to 'agency'}}
+                          <i class="fa fa-university" aria-hidden="true"></i>
+                          <span>Agencias</span>
+                        {{/link-to}}
+                    </li>
+                  {{/if}}
+                  {{#if isAdmin}}
+                    <li>
+                        {{#link-to 'account'}}
+                          <i class="fa fa-cogs" aria-hidden="true"></i>
+                          <span>Contas</span>
+                        {{/link-to}}
+                    </li>
+                  {{/if}}
+
+              </ul>
+          </div>
+          <!-- /.sidebar-collapse -->
+      </div>
+      <!-- /.navbar-static-side -->
+  </nav>
