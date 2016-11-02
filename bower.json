@@ -11,6 +11,7 @@
     "jquery": "^2.2.4",
     "lodash": "^2.4.0",
     "metisMenu": "^2.5.2",
-    "sb-admin-2": "*"
+    "sb-admin-2": "*",
+    "sweetalert": "~1.1.0"
   }
 }

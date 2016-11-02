@@ -1,0 +1,159 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4 class="text-center">CADASTRAR</h4>
+  </div>
+  <div class="panel-body">
+    <div class="col-md-6 col-md-offset-3">
+      <div>
+        <div class="row">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">ENDEREÇO</h3>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label>Cidade</label>
+                {{input
+                  class="form-control"
+                  placeholder="Insira a cidade"
+                  value=model.city}}
+              </div>
+
+              <div class="form-group">
+                <label>CEP</label>
+                {{input
+                  class="form-control"
+                  placeholder="Insira o CEP"
+                  value=model.zipCode}}
+              </div>
+
+              <div class="form-group">
+                <label>Localidade (Bairro, povoado, vila)</label>
+                {{input
+                  class="form-control"
+                  placeholder="Localidade"
+                  value=model.locality}}
+              </div>
+              <div class="form-group">
+                <label>Logradouro (tipo, titulo, nome)</label>
+                {{input
+                  class="form-control"
+                  placeholder="Insira o Logradouro"
+                  value=model.publicPlace}}
+              </div>
+              <div class="form-group">
+                <label>Complemento</label>
+                {{input
+                  class="form-control"
+                  placeholder="Insira o Complemento"
+                  value=model.complement}}
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">CARACTERÍSTICAS DO DOMICÍLIO</h3>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label> O local onde está situado o seu domicílio tem, na maioria,características</label>
+                <p>{{radio-btn value="Urbana" checked=model.characteristics}} Urbana</p>
+                <p>{{radio-btn value="Rurais" checked=model.characteristics}} Rurais</p>
+              </div>
+              <div class="form-group">
+                <label> Qual é a espécie do seu domicílio?</label>
+                <p>{{radio-btn value="Particular permanente" checked=model.typeHousehold}} Particular permanente</p>
+                <p>{{radio-btn value="Particular Improvisado" checked=model.typeHousehold}} Particular Improvisado</p>
+                <p>{{radio-btn value="Coletivo" checked=model.typeHousehold}} Coletivo</p>
+              </div>
+              <div class="form-group">
+                <label>Qual é a forma de abastecimento de água utilizada no seu domicílio?</label>
+                <p>{{radio-btn value="Rede geral" checked=model.typeWaterSupply}} Rede geral de distribuição</p>
+                <p>{{radio-btn value="Cisterna" checked=model.typeWaterSupply}} Cisterna</p>
+                <p>{{radio-btn value="Outra forma" checked=model.typeWaterSupply}} Outra forma</p>
+              </div>
+              <div class="form-group">
+                <label> No seu domicílio ou na propriedade existe banheiro ou sanitário?</label>
+                <p>{{radio-btn value="Sim" checked=model.toiletBathroom}} Sim</p>
+                <p>{{radio-btn value="Não" checked=model.toiletBathroom}} Não</p>
+              </div>
+              <div class="form-group">
+                <label> Qual é a forma de iluminação utilizada no seu domicílio?</label>
+                <p>{{radio-btn value="Elétrica com medidor próprio" checked=model.lightingUsed}} Elétrica com medidor próprio</p>
+                <p>{{radio-btn value="Elétrica com medidor comunitário" checked=model.lightingUsed}} Elétrica com medidor comunitário</p>
+                <p>{{radio-btn value="Elétrica sem medidor" checked=model.lightingUsed}} Elétrica sem medidor</p>
+                <p>{{radio-btn value="Óleo, querosene ou gás" checked=model.lightingUsed}} Óleo, querosene ou gás</p>
+                <p>{{radio-btn value="Vela" checked=model.lightingUsed}} Vela</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">FAMÍLIA</h3>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label> Tipo da família</label>
+                <p>{{radio-btn value="Indígena" checked=model.familyType}} Indígena</p>
+                <p>{{radio-btn value="Quilombola" checked=model.familyType}} Quilombola</p>
+                <p>{{radio-btn value="Outro" checked=model.familyType}} Outro</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">IDENTIFICAÇÃO DA PESSOA</h3>
+            </div>
+            <div class="panel-body">
+              <div class="form-group">
+                <label>Nome completo</label>
+                {{input
+                  class="form-control"
+                  type='email'
+                  placeholder="Insira o Nome completo"
+                  value=model.fullName}}
+              </div>
+              <div class="form-group">
+                <label>Sexo</label>
+                <p>{{radio-btn value="Masculino" checked=model.gender}} Masculino</p>
+                <p>{{radio-btn value="Feminino" checked=model.gender}} Feminino</p>
+              </div>
+              <div class="form-group">
+                <label>Cor ou raça</label>
+                <p>{{radio-btn value="Branca" checked=model.skinColor}} Branca</p>
+                <p>{{radio-btn value="Preta" checked=model.skinColor}} Preta</p>
+                <p>{{radio-btn value="Amarela" checked=model.skinColor}} Amarela</p>
+                <p>{{radio-btn value="Parda" checked=model.skinColor}} Parda</p>
+                <p>{{radio-btn value="Indígena" checked=model.skinColor}} Indígena</p>
+              </div>
+              <div class="form-group">
+                <label>Nome completo da mãe</label>
+                {{input
+                  class="form-control"
+                  type='email'
+                  placeholder="Insira o nome completo da mãe"
+                  value=model.motherName}}
+              </div>
+              <div class="form-group">
+                <label>Nome completo do pai</label>
+                {{input
+                  class="form-control"
+                  type='email'
+                  placeholder="Insira o nome completo do pai"
+                  value=model.fatherName}}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{upload-avatar
+        uploadForm=uploadForm}}
+        <div class="form-group">
+          <button type="submit" class="btn btn-success pull-right" {{action 'startUpload' model}}>Salvar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

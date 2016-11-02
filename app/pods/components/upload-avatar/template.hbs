@@ -1,0 +1,14 @@
+<div class="container-upload-avatar">
+  <input type="file" class="upload-image hide">
+
+  <img src="{{if urlPreview urlPreview 'assets/images/avatar.png'}}" class="avatar-image" />
+
+  <div class="btn-upload" {{action 'chooseImage'}}>
+    {{#if urlPreview}}
+      <i class="fa fa-times"></i> REMOVER
+    {{else}}
+      <i class="fa fa-picture-o"></i> CARREGAR FOTOGRAFIA
+    {{/if}}
+  </div>
+  <div class="clearfix"></div>
+</div>

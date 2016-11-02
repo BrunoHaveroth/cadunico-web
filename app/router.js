@@ -7,21 +7,11 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('login');
-  this.route('campaign', function() {
-    this.route('new');
-    this.route('show', {path: 'show/:campaign_id'});
-    this.route('edit', {path: '/:campaign_id'});
-  });
   this.route('not-authorized');
-  this.route('agency', function() {
-    this.route('edit');
-    this.route('show');
+  this.route('users', function() {
     this.route('new');
-  });
-  this.route('account', function() {
-    this.route('edit', {path: '/:account_id'});
-    this.route('new');
-    this.route('show', {path: 'show/:account_id'});
+    this.route('edit', {path: '/:person_id'});
+    this.route('show', {path: 'show/:person_id'});
   });
 });
 

@@ -7,7 +7,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">LD Manager</a>
+          <a class="navbar-brand" href="index.html">CadUnico</a>
       </div>
       <!-- /.navbar-header -->
 
@@ -20,10 +20,10 @@
                   <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
                   </li>
                   {{#if isAgencyAdmin}}
-                    <li>{{#link-to 'agency'}}<i class="fa fa-university" aria-hidden="true"></i> Agencia{{/link-to}}</li>
+                    <li>{{#link-to 'application'}}<i class="fa fa-university" aria-hidden="true"></i> Agencia{{/link-to}}</li>
                   {{/if}}
                   {{#if isAdmin}}
-                    <li>{{#link-to 'account'}}<i class="fa fa-cogs" aria-hidden="true"></i> Conta{{/link-to}}</li>
+                    <li>{{#link-to 'application'}}<i class="fa fa-cogs" aria-hidden="true"></i> Conta{{/link-to}}</li>
                   {{/if}}
                   <li><a href="#"><i class="fa fa-wrench" aria-hidden="true"></i> Settings</a>
                   </li>
@@ -52,34 +52,11 @@
                       <!-- /input-group -->
                   </li>
                   <li>
-                      {{#link-to 'campaign'}}
-                        <i class="fa fa-laptop" aria-hidden="true"></i>
-                        <span>Campanhas</span>
-                      {{/link-to}}
-                  </li>
-                  <li>
-                      {{#link-to 'lead'}}
+                      {{#link-to 'users'}}
                         <i class="fa fa-users" aria-hidden="true"></i>
-                        <span>Leads</span>
+                        <span>Cadastros</span>
                       {{/link-to}}
                   </li>
-                  {{#if isAgencyAdmin}}
-                    <li>
-                        {{#link-to 'agency'}}
-                          <i class="fa fa-university" aria-hidden="true"></i>
-                          <span>Agencias</span>
-                        {{/link-to}}
-                    </li>
-                  {{/if}}
-                  {{#if isAdmin}}
-                    <li>
-                        {{#link-to 'account'}}
-                          <i class="fa fa-cogs" aria-hidden="true"></i>
-                          <span>Contas</span>
-                        {{/link-to}}
-                    </li>
-                  {{/if}}
-
               </ul>
           </div>
           <!-- /.sidebar-collapse -->

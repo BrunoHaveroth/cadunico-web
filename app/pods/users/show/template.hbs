@@ -1,0 +1,60 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <img src="{{model.user.getAvatar}}" class="avatar-professional"/>
+        <ul class="list-group info-profile">
+          <li class="list-group-item"><b>ID: </b> {{model.id}}</li>
+          <li class="list-group-item"><b>Nome: </b> {{model.fullName}}</li>
+          <li class="list-group-item"><b>Sexo: </b> {{model.gender}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><i class="fa fa-map-marker"></i> Endereço</h4>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="list-group-item"><b>CEP: </b> {{model.zipCode}}</li>
+          <li class="list-group-item"><b>Cidade: </b> {{model.city}}</li>
+          <li class="list-group-item"><b>Localidade: </b> {{model.locality}}</li>
+          <li class="list-group-item"><b>Logradouro: </b> {{model.publicPlace}}</li>
+          <li class="list-group-item"><b>Complemento: </b> {{model.complement}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><i class="fa fa-home"></i> Característica do Domicílio</h4>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="list-group-item"><b>Local situado: </b> {{model.characteristics}}</li>
+          <li class="list-group-item"><b>Espécie do seu domicílio: </b> {{model.typeHousehold}}</li>
+          <li class="list-group-item"><b>Forma de abastecimento de água: </b> {{model.typeWaterSupply}}</li>
+          <li class="list-group-item"><b>Existe banheiro ou sanitário?: </b> {{model.toiletBathroom}}</li>
+          <li class="list-group-item"><b>Forma de iluminação: </b> {{model.lightingUsed}}</li>
+          <li class="list-group-item"><b>Nome no cartão: </b> {{model.legal_name}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4><i class="fa fa-users"></i> Familia</h4>
+      </div>
+      <div class="panel-body">
+        <ul class="list-group">
+          <li class="list-group-item"><b>Tipo da família: </b> {{model.familyType}}</li>
+          <li class="list-group-item"><b>Nome completo da mãe: </b> {{model.motherName}}</li>
+          <li class="list-group-item"><b>Nome completo do pai: </b> {{model.fatherName}}</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
