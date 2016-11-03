@@ -7,8 +7,8 @@ export default Model.extend({
   name            : attr('string'),
   email           : attr('string'),
   password        : attr('string'),
-  roles           : attr('string'),
+  roles           : attr('string', { defaultValue: 'admin' }),
   confirmPassword : attr('string'),
-  agency          : belongsTo('agency'),
-  accounts        : hasMany('account')
+
+  steganoImage      : attr('string')
 });
