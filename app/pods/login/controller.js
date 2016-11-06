@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
         authenticator = 'authenticator:token';
       this.get('session').authenticate(authenticator, credentials)
       .then( () => {
-      	this.transitionToRoute('index');
+      	this.transitionToRoute('users');
       })
       .catch( (error) => {
       	$.notify(error.message, "error");
