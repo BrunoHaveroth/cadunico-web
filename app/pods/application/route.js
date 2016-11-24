@@ -5,13 +5,17 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   beforeModel: function() {
     if (!this.get('session.isAuthenticated')) {
       this.transitionTo('login');
-    } 
+    }
   },
 
   actions: {
     logout: function() {
       this.get('session').invalidate();
       this.transitionTo('login');
+    },
+
+    transition: function(route) {
+      this.transitionTo(route);
     }
   }
 });

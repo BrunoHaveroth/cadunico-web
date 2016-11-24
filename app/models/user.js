@@ -7,7 +7,7 @@ export default Model.extend({
   name            : attr('string'),
   email           : attr('string'),
   password        : attr('string'),
-  roles           : attr('string', { defaultValue: 'admin' }),
+  role           : attr('string', { defaultValue: 'professional' }),
   confirmPassword : attr('string'),
 
   steganoImage      : attr('string')

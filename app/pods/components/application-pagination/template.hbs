@@ -1,0 +1,11 @@
+<center>
+  {{#if noLoadMore}}
+    <h4>não há mais registros</h4>
+  {{else}}
+    {{#if loading}}
+      <img src="assets/images/loader.gif" alt="loader" />
+    {{else}}
+      <h4 {{action 'loadMore'}} class="loadMore">ver mais</h4>
+    {{/if}}
+  {{/if}}
+</center>

@@ -6,9 +6,10 @@
         {{application-search
           model=model
           skip=skip
+          store=store
           noLoadMore=noLoadMore
-          customEndPoint='professionals/search'
-          modelName='professional'}}
+          customEndPoint='searchPeople'
+          modelName='person'}}
         <div class="clearfix"></div>
       </div>
       <div class="panel-body">
@@ -40,6 +41,11 @@
             </tbody>
           </table>
         </div>
+        {{application-pagination
+          model=model
+          skip=skip
+          noLoadMore=noLoadMore
+          loading=loading}}
       </div>
     </div>
   </div>

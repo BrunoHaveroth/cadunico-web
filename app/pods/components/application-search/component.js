@@ -4,8 +4,8 @@ export default Ember.Component.extend({
   loadMoreAction: 'loadMore',
 
   sendSearch: function(search) {
-    this._controller.store
-    .findQuery(this.get('modelName'), {
+    this.get('store')
+    .query(this.get('modelName'), {
       customEndPoint: this.get('customEndPoint'),
       filter: search
     })

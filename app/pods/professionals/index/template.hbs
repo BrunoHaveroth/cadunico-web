@@ -6,9 +6,10 @@
         {{application-search
           model=model
           skip=skip
+          store=store
           noLoadMore=noLoadMore
-          customEndPoint='professionals/search'
-          modelName='professional'}}
+          customEndPoint='users/search'
+          modelName='user'}}
         <div class="clearfix"></div>
       </div>
       <div class="panel-body">
@@ -19,7 +20,9 @@
                 <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
-                <th>Ações</th>
+                {{#if (eq session.session.content.authenticated.role 'admin')}}
+                  <th>Ações</th>
+                {{/if}}
               </tr>
             </thead>
             <tbody>
@@ -28,17 +31,24 @@
                   <td>{{user.id}}</td>
                   <td>{{user.name}}</td>
                   <td>{{user.email}}</td>
-                  <td class="text-center">
-                    {{#link-to 'users.edit' user}}
-                      <i class="btn btn-default fa fa-edit" data-toggle="tooltip" title="Editar Pessoa"></i>
-                    {{/link-to}}
-                    <i class="btn btn-danger fa fa-remove" data-toggle="tooltip" title="Remover Cadastro" {{action 'deleteUser' user model}}></i>
-                  </td>
+                  {{#if (eq session.session.content.authenticated.role 'admin')}}
+                    <td class="text-center">
+                      {{#link-to 'users.edit' user}}
+                        <i class="btn btn-default fa fa-edit" data-toggle="tooltip" title="Editar Pessoa"></i>
+                      {{/link-to}}
+                      <i class="btn btn-danger fa fa-remove" data-toggle="tooltip" title="Remover Cadastro" {{action 'deleteUser' user model}}></i>
+                    </td>
+                  {{/if}}
                 </tr>
               {{/each}}
             </tbody>
           </table>
         </div>
+        {{application-pagination
+          model=model
+          skip=skip
+          noLoadMore=noLoadMore
+          loading=loading}}
       </div>
     </div>
   </div>

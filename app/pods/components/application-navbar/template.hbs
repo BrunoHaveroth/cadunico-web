@@ -1,46 +1,49 @@
-  <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-      <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="index.html">SteganoCad</a>
-      </div>
-      <!-- /.navbar-header -->
+<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="index.html">SteganoCad</a>
+  </div>
 
-      <ul class="nav navbar-top-links navbar-right">
-          <li class="dropdown">
-              <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                  <i class="fa fa-user fa-fw"></i>Admin <i class="fa fa-caret-down"></i>
-              </a>
-              <ul class="dropdown-menu dropdown-user">
-                <li><a href="#" {{action 'sendLogout'}}><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
-              </ul>
-              <!-- /.dropdown-user -->
-          </li>
-          <!-- /.dropdown -->
+  <ul class="nav navbar-top-links navbar-right">
+    <li class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="fa fa-user fa-fw"></i>Bem vindo {{session.session.content.authenticated.name}} <i class="fa fa-caret-down"></i>
+      </a>
+      <ul class="dropdown-menu dropdown-user">
+        <li><a href="#" {{action 'sendLogout'}}><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
       </ul>
-      <!-- /.navbar-top-links -->
+    </li>
+  </ul>
 
-      <div class="navbar-default sidebar" role="navigation">
-          <div class="sidebar-nav navbar-collapse">
-              <ul class="nav" id="side-menu">
-                  <li>
-                      {{#link-to 'users'}}
-                        <i class="fa fa-users" aria-hidden="true"></i>
-                        <span>Cadastros</span>
-                      {{/link-to}}
-                      {{#link-to 'professionals'}}
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <span>Profissionais</span>
-                      {{/link-to}}
-                  </li>
-              </ul>
+  <div class="navbar-default sidebar" role="navigation">
+    <div class="sidebar-nav navbar-collapse">
+      <ul class="nav" id="side-menu">
+        <li>
+          {{#link-to 'users'}}
+            <i class="fa fa-users" aria-hidden="true"></i>
+            <span>Cadastros</span>
+          {{/link-to}}
+          <div class="new-register" {{action 'transitionNew' 'users.new'}}>
+            <i class="fa fa-plus" aria-hidden="true"></i>
           </div>
-          <!-- /.sidebar-collapse -->
-      </div>
-      <!-- /.navbar-static-side -->
-  </nav>
+        </li>
+        <li>
+          {{#link-to 'professionals'}}
+            <i class="fa fa-user" aria-hidden="true"></i>
+            <span>Profissionais</span>
+          {{/link-to}}
+          {{#if (eq session.session.content.authenticated.role 'admin')}}
+            <div class="new-register" {{action 'transitionNew' 'professionals.new'}}>
+              <i class="fa fa-plus" aria-hidden="true"></i>
+            </div>
+          {{/if}}
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

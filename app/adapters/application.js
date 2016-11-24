@@ -8,5 +8,17 @@ export default DS.RESTAdapter.extend(DataAdapterMixin, {
   host: config.apiBaseUrl,
   shouldReloadAll: function () {
     return true;
+  },
+
+  query: function(store, type, query) {
+    var typeModel = '/' + type.toString().split(':')[1];
+    typeModel = Ember.String.pluralize(typeModel);
+    typeModel = Ember.String.camelize(typeModel);
+
+    var customEndPoint   = query.customEndPoint ? '/' + query.customEndPoint : typeModel;
+    var confirmationsUrl = this.host + customEndPoint;
+    delete query.customEndPoint;
+
+    return this.ajax(confirmationsUrl, 'GET', { data: query });
   }
 });
