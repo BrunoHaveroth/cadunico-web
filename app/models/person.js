@@ -26,5 +26,6 @@ export default Model.extend({
   motherName      : attr('string'),
   fatherName      : attr('string'),
 
-  steganoImage      : attr('string'),
+  steganoImage       : attr('string'),
+  updateSteganoImage : attr('string')
 });

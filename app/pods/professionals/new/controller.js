@@ -9,7 +9,7 @@ export default Ember.Controller.extend({
       .then(()=> {
         swal('Salvo com sucesso', '', 'success');
         Ember.run.later(()=> {
-          this.transitionToRoute('users');
+          this.transitionToRoute('professionals');
         }, 500);
       });
   },

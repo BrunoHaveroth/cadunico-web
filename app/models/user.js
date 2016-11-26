@@ -10,5 +10,6 @@ export default Model.extend({
   role           : attr('string', { defaultValue: 'professional' }),
   confirmPassword : attr('string'),
 
-  steganoImage      : attr('string')
+  steganoImage      : attr('string'),
+  updateSteganoImage : attr('string')
 });

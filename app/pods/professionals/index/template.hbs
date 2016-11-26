@@ -33,8 +33,8 @@
                   <td>{{user.email}}</td>
                   {{#if (eq session.session.content.authenticated.role 'admin')}}
                     <td class="text-center">
-                      {{#link-to 'users.edit' user}}
-                        <i class="btn btn-default fa fa-edit" data-toggle="tooltip" title="Editar Pessoa"></i>
+                      {{#link-to 'professionals.edit' user}}
+                        <i class="btn btn-default fa fa-edit" data-toggle="tooltip" title="Editar Profissional"></i>
                       {{/link-to}}
                       <i class="btn btn-danger fa fa-remove" data-toggle="tooltip" title="Remover Cadastro" {{action 'deleteUser' user model}}></i>
                     </td>

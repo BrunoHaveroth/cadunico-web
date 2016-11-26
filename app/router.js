@@ -15,7 +15,7 @@ Router.map(function() {
   });
   this.route('professionals', function() {
     this.route('new');
-    this.route('edit', {path: 'show/:user_id'});
+    this.route('edit', {path: 'edit/:user_id'});
   });
 });
 
